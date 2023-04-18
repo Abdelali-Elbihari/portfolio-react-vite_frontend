@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.40);
+  background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -106,7 +106,7 @@
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
-    background: url("../../assets/bgWhite.png");
+    background: url('../../assets/bgWhite.png');
     background-color: var(--white-color);
     background-size: cover;
     background-repeat: repeat;

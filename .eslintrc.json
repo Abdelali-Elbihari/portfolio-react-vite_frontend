@@ -5,7 +5,7 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "standard"
+        "standard",
     ],
     "overrides": [
     ],
@@ -17,5 +17,6 @@
         "react"
     ],
     "rules": {
+        "semi": [2, "always"]
     }
 }

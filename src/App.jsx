@@ -1,7 +1,7 @@
-import React from 'react'
-import { About, Footer, Header, Skills, Testimonial, Work } from './container'
-import NavBar from './components/NavBar/NavBar'
-import './App.scss'
+import React from 'react';
+import { About, Footer, Header, Skills, Testimonial, Work } from './container';
+import NavBar from './components/NavBar/NavBar';
+import './App.scss';
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
       <Testimonial />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
