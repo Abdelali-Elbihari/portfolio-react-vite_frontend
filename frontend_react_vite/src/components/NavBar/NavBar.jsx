@@ -6,7 +6,7 @@ import { images } from '../../constants';
 
 import './NavBar.scss';
 
-const links = ['home', 'about', 'contact', 'work', 'skills'];
+const links = ['home', 'about', 'work', 'skills', 'testimonial', 'contact'];
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
