@@ -44,7 +44,7 @@ const About = () => {
   );
 };
 
-const Profile = ({ about }) => (
+export const Profile = ({ about }) => (
   <motion.div
     whileInView={{ opacity: 1 }}
     whileHover={{ scale: 1.1 }}
@@ -58,17 +58,17 @@ const Profile = ({ about }) => (
   </motion.div>
 );
 
-const ProfileImage = ({ about }) => (
+export const ProfileImage = ({ about }) => (
   <img src={about?.imgUrl?.asset?._ref ? urlFor(about.imgUrl) : about.imgUrl} alt={about.title} />
 );
 
-const ProfileTitle = ({ about }) => (
+export const ProfileTitle = ({ about }) => (
   <h2 className='bold-text' style={{ marginTop: 20 }}>
     {about.title}
   </h2>
 );
 
-const ProfileDescription = ({ about }) => (
+export const ProfileDescription = ({ about }) => (
   <p className='p-text' style={{ marginTop: 10 }}>
     {about.description}
   </p>

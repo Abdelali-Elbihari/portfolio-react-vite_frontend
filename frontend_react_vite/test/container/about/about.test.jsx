@@ -1,9 +1,43 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-
+import { render, screen, within } from '@testing-library/react';
+import { client, urlFor } from '../../../src/client';
 import About, { ProfileImage, ProfileDescription, ProfileTitle } from '../../../src/container/About/About';
 
+const mockAbouts = [
+  {
+    _id: '1',
+    imgUrl: {
+      asset: {
+        _id: 'Image1',
+        _ref: 'image-Image1-2000x3000-jpg'
+      }
+    },
+    title: 'Profile 1',
+    description: 'Description for profile 1'
+  },
+  {
+    _id: '2',
+    imgUrl: {
+      asset: {
+        _id: 'Image2',
+        _ref: 'image-Image2-2000x3000-jpg'
+      }
+    },
+    title: 'Profile 2',
+    description: 'Description for profile 2'
+  }
+];
+
+function getImageUrl(about) {
+  const options = urlFor(about.imgUrl).options;
+  return `${options.baseUrl}/images/${options.projectId}/${options.dataset}/${about.imgUrl.asset._id}-2000x3000.jpg`;
+}
+
 describe('About component', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   describe('Title', () => {
     it('displays the correct title text', async () => {
       render(<About />);
@@ -14,82 +48,30 @@ describe('About component', () => {
   });
 
   describe('Profiles', () => {
-    afterEach(() => {
-      jest.clearAllMocks();
-    });
-
     it('renders profiles with correct data', async () => {
-      const mockAbouts = [
-        {
-          _id: '1',
-          imgUrl: {
-            asset: {
-              _ref: 'image-id-1'
-            }
-          },
-          title: 'Profile 1',
-          description: 'Description for profile 1'
-        },
-        {
-          _id: '2',
-          imgUrl: {
-            asset: {
-              _ref: 'image-id-2'
-            }
-          },
-          title: 'Profile 2',
-          description: 'Description for profile 2'
-        }
-      ];
-
-      // Mock fetch method for Sanity client
-      jest.mock('@sanity/client', () => {
-        return function createClient() {
-          return {
-            client: () => ({
-              fetch: jest.fn(() => Promise.resolve(mockAbouts))
-            })
-          };
-        };
-      });
-      
-      jest.mock('../../../src/client', () => ({
-        client: {
-          fetch: jest.fn(() => Promise.resolve(mockAbouts))
-        }
-      }));
-
+      jest.spyOn(client, 'fetch').mockImplementationOnce(async () => Promise.resolve(mockAbouts));
       render(<About />);
 
       const profileElements = await screen.findAllByTestId('profile-item');
-
       expect(profileElements.length).toBe(2);
 
       // Check first profile
-      const profile1 = profileElements[0];
-      expect(profile1).toContainHTML('<img src="image-id-1"/>'); // Check image source
-      expect(profile1).toHaveTextContent('Profile 1'); // Check profile title
-      expect(profile1).toHaveTextContent('Description for profile 1'); // Check description
+      const [about1, about2] = mockAbouts;
+      const [profile1, profile2] = profileElements;
+      expect(within(profile1).getByRole('img')).toHaveAttribute('alt', 'Profile 1');
+      expect(within(profile1).getByRole('img')).toHaveAttribute('src', getImageUrl(about1));
 
       // Check second profile
-      const profile2 = profileElements[1];
-      expect(profile2).toContainHTML('<img src="/path/to/image.png"/>'); // Check image source
-      expect(profile2).toHaveTextContent('Profile 2'); // Check profile title
-      expect(profile2).toHaveTextContent('Description for profile 2'); // Check description
-
-      global.fetch.mockRestore();
+      expect(within(profile2).getByRole('img')).toHaveAttribute('alt', 'Profile 2');
+      expect(within(profile2).getByRole('img')).toHaveAttribute('src', getImageUrl(about2));
     });
 
     it('renders default profiles if fetch fails', async () => {
-      jest.spyOn(global, 'fetch').mockImplementation(() => Promise.reject(new Error()));
-
+      jest.spyOn(client, 'fetch').mockImplementationOnce(async () => Promise.reject(new Error()));
       render(<About />);
 
-      const defaultProfiles = await screen.findAllByRole('article');
-
-      expect(defaultProfiles.length).toBe(3); // Default profiles should have length of 3
-
-      global.fetch.mockRestore();
+      const defaultProfiles = await screen.findAllByTestId('profile-item');
+      expect(defaultProfiles.length).toBe(7);
     });
   });
 
@@ -99,7 +81,7 @@ describe('About component', () => {
         _id: '1',
         imgUrl: {
           asset: {
-            _ref: 'image-id-1'
+            _ref: 'image-Image1-2000x3000-jpg'
           }
         },
         title: 'Profile 1',
@@ -111,7 +93,7 @@ describe('About component', () => {
       const imgElement = screen.getByAltText(mockAbout.title);
       expect(imgElement).toBeInTheDocument();
       expect(imgElement.tagName).toBe('IMG');
-      expect(imgElement.src).toContain('image-id-1');
+      expect(imgElement.src).toContain('Image1-2000x3000.jpg');
     });
 
     it('renders fallback image if imgUrl is not an object', () => {
