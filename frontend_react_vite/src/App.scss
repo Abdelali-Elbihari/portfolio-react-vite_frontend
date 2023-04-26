@@ -112,7 +112,7 @@
     background-color: var(--white-color);
     margin: 0.25rem 0;
     border: 1px solid var(--lightGray-color);
-
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,7 +123,6 @@
       width: 15px;
       height: 15px;
       color: var(--gray-color);
-      cursor: pointer;
     }
 
     &:hover {
@@ -174,6 +173,9 @@
       width: 20px;
       height: 20px;
     }
+  }
+  .dot-active {
+    background-color: var(--secondary-color);
   }
 }
 
