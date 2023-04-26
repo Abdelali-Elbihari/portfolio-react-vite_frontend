@@ -50,6 +50,7 @@ const Profile = ({ about }) => (
     whileHover={{ scale: 1.1 }}
     transition={{ duration: 0.5, type: 'tween' }}
     className='app__profile-item'
+    data-testid='profile-item'
   >
     <ProfileImage about={about} />
     <ProfileTitle about={about} />

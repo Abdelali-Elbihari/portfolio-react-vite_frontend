@@ -1,9 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 import About, { ProfileImage, ProfileDescription, ProfileTitle } from '../../../src/container/About/About';
-
 
 describe('About component', () => {
   describe('Title', () => {
@@ -34,21 +32,36 @@ describe('About component', () => {
         },
         {
           _id: '2',
-          imgUrl: '/path/to/image.png',
+          imgUrl: {
+            asset: {
+              _ref: 'image-id-2'
+            }
+          },
           title: 'Profile 2',
           description: 'Description for profile 2'
         }
       ];
 
-      jest.spyOn(global, 'fetch').mockImplementation(() =>
-        Promise.resolve({
-          json: () => Promise.resolve(mockAbouts)
-        })
-      );
+      // Mock fetch method for Sanity client
+      jest.mock('@sanity/client', () => {
+        return function createClient() {
+          return {
+            client: () => ({
+              fetch: jest.fn(() => Promise.resolve(mockAbouts))
+            })
+          };
+        };
+      });
+      
+      jest.mock('../../../src/client', () => ({
+        client: {
+          fetch: jest.fn(() => Promise.resolve(mockAbouts))
+        }
+      }));
 
       render(<About />);
 
-      const profileElements = await screen.findAllByRole('article');
+      const profileElements = await screen.findAllByTestId('profile-item');
 
       expect(profileElements.length).toBe(2);
 

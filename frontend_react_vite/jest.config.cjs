@@ -15,7 +15,7 @@ module.exports = {
   testMatch: ['**/*test.js?(x)'],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-      '<rootDir>/__tests__/__mocks__/fileMock.js',
-    '\\.(css|less|scss)$': '<rootDir>/__tests__/__mocks__/styleMock.js'
+      '<rootDir>/test/__mocks__/fileMock.js',
+    '\\.(css|less|scss)$': '<rootDir>/test/__mocks__/styleMock.js'
   }
 };

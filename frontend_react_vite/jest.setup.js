@@ -5,7 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 require('dotenv').config({
   path: '.env'
 });
-jest.mock('./__tests__/__helpers__/getEnviroments', () => ({
+jest.mock('./test/__helpers__/getEnviroments', () => ({
   getEnviroments: () => ({ ...process.env })
 }));
 
