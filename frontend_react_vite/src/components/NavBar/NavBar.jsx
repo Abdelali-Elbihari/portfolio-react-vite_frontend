@@ -2,11 +2,9 @@ import React, { useState, useCallback } from 'react';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
-import { images } from '../../constants';
+import { images, navBarLinks } from '../../constants';
 
 import './NavBar.scss';
-
-const links = ['home', 'about', 'work', 'skills', 'testimonial', 'contact'];
 
 const NavLink = React.memo(({ link, onClick }) => (
   <li className='app__flex p-text'>
@@ -37,7 +35,7 @@ const NavBar = () => {
           <motion.div whileInView={{ x: [-200, 0] }} transition={{ duration: 0.85, ease: 'easeOut' }}>
             <HiX onClick={handleCloseToggle} />
             <ul className='app__navbar-links'>
-              {links.map((link) => (
+              {navBarLinks.map((link) => (
                 <NavLink key={`link-${link}`} link={link} onClick={handleCloseToggle} />
               ))}
             </ul>
@@ -46,7 +44,7 @@ const NavBar = () => {
       </div>
 
       <ul className='app__navbar-links'>
-        {links.map((link) => (
+        {navBarLinks.map((link) => (
           <li className='app__flex p-text' key={`link-${link}`}>
             <div />
             <a href={`#${link}`}>{link}</a>

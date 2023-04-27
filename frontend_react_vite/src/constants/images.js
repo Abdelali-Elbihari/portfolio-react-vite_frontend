@@ -1,7 +1,6 @@
 import email from '../assets/email.png';
 import mobile from '../assets/mobile.png';
 import api from '../assets/api.png';
-import cpp from '../assets/cpp.png';
 import css from '../assets/css.png';
 import figma from '../assets/figma.png';
 import flutter from '../assets/flutter.png';
@@ -16,7 +15,6 @@ import react from '../assets/react.png';
 import redux from '../assets/redux.png';
 import sass from '../assets/sass.png';
 import typescript from '../assets/typescript.png';
-import vue from '../assets/vue.png';
 
 import aboutFullStack from '../assets/aboutFullStack.png';
 import aboutBackend from '../assets/aboutBackend.png';
@@ -30,13 +28,6 @@ import profile from '../assets/profile.png';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
 
-import adidas from '../assets/adidas.png';
-import amazon from '../assets/amazon.png';
-import asus from '../assets/asus.png';
-import bolt from '../assets/bolt.png';
-import nb from '../assets/nb.png';
-import skype from '../assets/skype.png';
-import spotify from '../assets/spotify.png';
 import java from '../assets/java.png';
 import mongodb from '../assets/mongodb.png';
 import springboot from '../assets/springboot.png';
@@ -45,7 +36,6 @@ export default {
   email,
   mobile,
   api,
-  cpp,
   css,
   figma,
   flutter,
@@ -60,7 +50,6 @@ export default {
   redux,
   sass,
   typescript,
-  vue,
   aboutFullStack,
   aboutBackend,
   aboutFrontend,
@@ -71,13 +60,6 @@ export default {
   profile,
   circle,
   logo,
-  adidas,
-  amazon,
-  asus,
-  bolt,
-  nb,
-  skype,
-  spotify,
   java,
   mongodb,
   springboot

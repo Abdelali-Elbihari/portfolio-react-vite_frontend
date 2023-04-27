@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { navBarLinks } from '../constants';
 
 const NavigationDots = ({ active }) => (
   <div className='app__navigation'>
-    {['home', 'about', 'work', 'skills', 'testimonial', 'contact'].map((item, index) => (
+    {navBarLinks.map((item, index) => (
       <a
         href={`#${item}`}
         key={item + index}

@@ -11,15 +11,23 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.21.0",
+    "@emailjs/browser": "^3.11.0",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.12.2",
     "@sanity/client": "^5.4.2",
     "@sanity/image-url": "^1.0.2",
+    "email-js": "^2.0.2",
     "framer-motion": "^10.12.2",
     "node-sass": "^8.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.9",
     "react-icons": "^4.8.0",
-    "react-router-dom": "^6.10.0"
+    "react-router-dom": "^6.10.0",
+    "react-tooltip": "^4.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",

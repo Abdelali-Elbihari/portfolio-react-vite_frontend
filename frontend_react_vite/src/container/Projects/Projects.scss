@@ -1,10 +1,10 @@
-.app__works {
+.app__projects {
   flex: 1;
   width: 100%;
   flex-direction: column;
 }
 
-.app__work-filter {
+.app__project-filter {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -13,7 +13,7 @@
 
   margin: 4rem 0 2rem;
 
-  .app__work-filter-item {
+  .app__project-filter-item {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     background-color: #fff;
@@ -41,13 +41,13 @@
   }
 }
 
-.app__work-portfolio {
+.app__project-portfolio {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 
-  .app__work-item {
+  .app__project-item {
     width: 320px;
     flex-direction: column;
 
@@ -56,7 +56,7 @@
     border-radius: 0.5rem;
     background-color: #fff;
     color: #000;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 
     cursor: pointer;
     transition: all 0.3s ease;
@@ -78,7 +78,7 @@
   }
 }
 
-.app__work-img {
+.app__project-img {
   width: 100%;
   height: 200px;
 
@@ -96,7 +96,7 @@
   }
 }
 
-.app__work-hover {
+.app__project-hover {
   position: absolute;
   top: 0;
   left: 0;
@@ -131,7 +131,7 @@
   }
 }
 
-.app__work-content {
+.app__project-content {
   padding: 0.5rem;
   width: 100%;
   position: relative;
@@ -146,7 +146,7 @@
     }
   }
 
-  .app__work-tag {
+  .app__project-tag {
     position: absolute;
 
     padding: 0.5rem 1rem;

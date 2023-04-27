@@ -15,13 +15,7 @@ const scaleVariants = {
   }
 };
 
-const techStack = [
-  images.react,
-  images.node,
-  images.mongodb,
-  images.java,
-  images.springboot
-];
+const techStack = [images.react, images.node, images.mongodb, images.java, images.springboot];
 
 const Header = () => {
   return (
@@ -58,11 +52,7 @@ const Header = () => {
         ></motion.div>
       </motion.div>
 
-      <motion.div
-        variant={scaleVariants}
-        whileInView={scaleVariants.whileInView}
-        className='app__header-circles'
-      >
+      <motion.div variant={scaleVariants} whileInView={scaleVariants.whileInView} className='app__header-circles'>
         {techStack.map((circle, index) => (
           <div className='circle-cmp app-flex' key={`circle-${index}`}>
             <img src={circle} alt='circle' />
@@ -73,8 +63,4 @@ const Header = () => {
   );
 };
 
-export default AppWrap(
-  MotionWrap(Header, 'app__header'),
-  'home',
-  'app__whitebg'
-);
+export default AppWrap(MotionWrap(Header, 'app__header'), 'home', 'app__primarybg');
