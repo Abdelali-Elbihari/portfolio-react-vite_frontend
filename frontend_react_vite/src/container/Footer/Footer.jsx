@@ -24,7 +24,7 @@ const Footer = () => {
 
     return Promise.all([
       emailjs.send(
-        process.env.VITE_EMAIL_JS_TEMPLATE_ID,
+        process.env.VITE_EMAIL_JS_SERVICE_ID,
         process.env.VITE_EMAIL_JS_TEMPLATE_ID,
         templateParams,
         process.env.VITE_EMAIL_JS_PUBLIC_KEY
