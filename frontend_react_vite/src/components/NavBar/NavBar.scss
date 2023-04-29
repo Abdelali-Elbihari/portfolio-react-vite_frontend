@@ -1,5 +1,6 @@
 .app__navbar {
-  background: rgb(219 223 235 / 85%) !important;
+  background: #ffffff !important;
+    // background: linear-gradient(-45deg, rgb(253, 214, 214) 0%, #c6deffa6 100%);
   backdrop-filter: blur(5px) !important;
   box-shadow: -7px 0px 28px 10px rgb(134 126 149 / 59%) !important;
   position: fixed;
@@ -70,7 +71,7 @@
 }
 
 .app__navbar-menu {
-  .css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+  div:nth-child(3) {
     position: fixed !important;
     top: 0 !important;
     bottom: 0 !important;
