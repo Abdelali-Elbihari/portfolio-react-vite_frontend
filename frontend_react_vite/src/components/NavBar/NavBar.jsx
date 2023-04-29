@@ -16,21 +16,6 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
 import './NavBar.scss';
 
-const NavLink = ({ link, onClick }) => (
-  <li className='app__flex p-text'>
-    <a href={`#${link}`} onClick={onClick}>
-      {link}
-    </a>
-  </li>
-);
-
-NavLink.displayName = 'NavLink';
-
-NavLink.propTypes = {
-  link: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired
-};
-
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
@@ -52,22 +37,7 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar
-      position='static'
-      sx={{
-        // height: '150px',
-        // width: '100%',
-        // display: 'flex',
-        // justifyContent: 'space - between',
-        // alignItems: 'center',
-        background: 'rgba(255, 255, 255, 0.4)',
-        backdropFilter: 'blur(5px)',
-        // border: '1px solid rgba(255, 255, 255, 0.18)',
-        // boxShadow: '0 0 10px rgba(168, 168, 168, 0.3)',
-        position: 'fixed',
-        zIndex: 10
-      }}
-    >
+    <AppBar position='f' className='app__navbar'>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

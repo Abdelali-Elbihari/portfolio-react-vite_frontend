@@ -46,15 +46,17 @@ const Footer = () => {
 
   return (
     <>
-      {!isSubmitted && <h2 className='head-text'>Get in touch with me</h2>}
+      {!isSubmitted && (
+        <h2 className='head-text'>
+          <span>Get in touch with me</span>
+        </h2>
+      )}
 
       <div className='app__footer-cards'>
-        <div className='app__footer-card '>
+        <a href='mailto:bihariel@gmail.com' className='app__footer-card '>
           <img src={images.email} alt='email' />
-          <a href='mailto:bihariel@gmail.com' className='p-text'>
-            bihariel@gmail.com
-          </a>
-        </div>
+          bihariel@gmail.com
+        </a>
       </div>
 
       {!isValid && isSubmitted && (
@@ -124,4 +126,4 @@ const Footer = () => {
   );
 };
 
-export default AppWrap(MotionWrap(Footer, 'app__footer'), 'contact', 'app__whitebg');
+export default AppWrap(MotionWrap(Footer, 'app__footer'), 'contact', 'app__primarybg');

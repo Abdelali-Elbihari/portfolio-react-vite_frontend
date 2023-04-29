@@ -2,12 +2,28 @@
   flex: 1;
   width: 100%;
   flex-direction: column;
-  margin-top: -4rem;
+  display: flex !important;
+  justify-content: flex-start;
+  justify-items: flex-start;
+
+  padding: 1rem 2rem 0rem;
+
+  @media screen and (min-width: 2000px) {
+    padding-top: 4rem;
+  }
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 450px) {
+    padding: 5rem 1rem 2rem;
+  }
 }
 
 .app__experiences-container {
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 2rem;
 
   display: flex;
   flex-direction: row;

@@ -1,3 +1,11 @@
+.app__navbar {
+  background: rgb(219 223 235 / 85%) !important;
+  backdrop-filter: blur(5px) !important;
+  box-shadow: -7px 0px 28px 10px rgb(134 126 149 / 59%) !important;
+  position: fixed;
+  z-index: 10 !important;
+}
+
 .app__navbar-links {
   flex: 1 !important;
   justify-content: center !important;
@@ -20,13 +28,15 @@
     }
 
     a {
-      color: var(--gray-color) !important;
+      color: rgba(0, 0, 0, 0.6) !important;
       text-decoration: none !important;
       flex-direction: column !important;
       text-transform: capitalize !important;
       font-weight: 600 !important;
-      font-size: x-large !important;
+      font-size: large !important;
       transition: all 0.3s ease-in-out !important;
+      font-family: 'Inter';
+      font-style: normal;
 
       &:hover {
         color: var(--secondary-color) !important;
@@ -42,10 +52,15 @@
 }
 
 .app__navbar-menu-icon {
-  margin: 1rem !important;
+  margin: 1rem 1rem 0 0 !important;
   width: 45px !important;
   height: 45px !important;
-  
+
+  @media screen and (max-width: 450px) {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
   background: var(--secondary-color) !important;
 
   svg {
@@ -93,13 +108,15 @@
     }
 
     a {
-      color: var(--gray-color) !important;
+      color: rgba(0, 0, 0, 0.6) !important;
       text-decoration: none !important;
       flex-direction: column !important;
       text-transform: capitalize !important;
       font-weight: 600 !important;
-      font-size: x-large !important;
+      font-size: large !important;
       transition: all 0.3s ease-in-out !important;
+      font-family: 'Inter';
+      font-style: normal;
 
       &:hover {
         color: var(--secondary-color) !important;
@@ -108,7 +125,7 @@
 
     &:hover {
       div {
-        background: var(--secondary-color) !important;
+      background: transparent !important;
       }
     }
   }

@@ -8,7 +8,7 @@
 }
 
 .app__primarybg {
-  background-color: var(--primary-color);
+  background: linear-gradient(90deg, #f8b3b3ab 0%, #c4daf8 100%);
 }
 
 .app__container {
@@ -30,7 +30,8 @@
   width: 100%;
   flex-direction: column;
   padding: 10rem 2rem 1rem;
-
+  align-self: flex-start;
+  
   @media screen and (max-width: 450px) {
     padding: 4rem 1rem 2rem;
   }

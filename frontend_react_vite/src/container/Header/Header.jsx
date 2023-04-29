@@ -45,11 +45,11 @@ const Header = () => {
         className='app__header-img'
       >
         <img src={images.profile} alt='Profile image' />
-        <motion.div
+        <div
           whileInView={{ scale: [0, 1] }}
           transition={{ duration: 1, ease: 'easeInOut' }}
           className='overlay_circle'
-        ></motion.div>
+        ></div>
       </motion.div>
 
       <motion.div variant={scaleVariants} whileInView={scaleVariants.whileInView} className='app__header-circles'>
