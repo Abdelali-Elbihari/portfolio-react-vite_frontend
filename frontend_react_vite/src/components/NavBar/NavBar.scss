@@ -1,10 +1,10 @@
 .app__navbar {
-  background: #ffffff !important;
+  background: #f8f9faaf!important;
     // background: linear-gradient(-45deg, rgb(253, 214, 214) 0%, #c6deffa6 100%);
   backdrop-filter: blur(5px) !important;
-  box-shadow: -7px 0px 28px 10px rgb(134 126 149 / 59%) !important;
   position: fixed;
   z-index: 10 !important;
+  height: 100px;
 }
 
 .app__navbar-links {
@@ -12,7 +12,7 @@
   justify-content: center !important;
   align-items: center !important;
   list-style: none !important;
-  margin: 0 2rem !important;
+  margin-top: -4px !important;
   display: flex !important;
 
   li {
@@ -53,7 +53,7 @@
 }
 
 .app__navbar-menu-icon {
-  margin: 1rem 1rem 0 0 !important;
+  // margin: 1rem 1rem 0 0 !important;
   width: 45px !important;
   height: 45px !important;
 

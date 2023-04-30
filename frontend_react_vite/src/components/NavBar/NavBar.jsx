@@ -95,7 +95,7 @@ const NavBar = () => {
               alt='Remy Sharp'
               variant='square'
               src={images.logo}
-              sx={{ height: 100, width: 100, margin: '1rem 2rem 1rem 0', justifyContent: 'flex-end' }}
+              sx={{ height: 65, width: 65, margin: '1rem 2rem 1rem 0', justifyContent: 'flex-end' }}
             />
           </Box>
         </Toolbar>
