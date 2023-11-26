@@ -6,8 +6,8 @@
   justify-content: flex-start;
   justify-items: flex-start;
 
-  padding: 1rem 0rem 0rem;
-  
+  padding: 1rem 0rem 0rem 2rem;
+
   @media screen and (min-width: 2000px) {
     padding-top: 4rem;
   }
@@ -17,7 +17,7 @@
   }
 
   @media screen and (max-width: 450px) {
-    padding: 7rem 1rem 2rem;
+    padding: 4rem 1rem 2rem;
   }
 }
 
@@ -146,7 +146,7 @@
   justify-content: flex-end;
 
   p {
-    font-weight: 800;
+    font-weight: 600;
     color: var(--secondary-color);
   }
 

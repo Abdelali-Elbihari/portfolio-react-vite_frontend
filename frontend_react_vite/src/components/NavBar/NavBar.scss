@@ -1,10 +1,11 @@
 .app__navbar {
-  background: #f8f9faaf!important;
-    // background: linear-gradient(-45deg, rgb(253, 214, 214) 0%, #c6deffa6 100%);
+  background: var(--white-color) !important;
+  // background: linear-gradient(-45deg, rgb(253, 214, 214) 0%, #c6deffa6 100%);
   backdrop-filter: blur(5px) !important;
   position: fixed;
   z-index: 10 !important;
   height: 100px;
+  justify-content: center !important;
 }
 
 .app__navbar-links {
@@ -12,7 +13,7 @@
   justify-content: center !important;
   align-items: center !important;
   list-style: none !important;
-  margin-top: -4px !important;
+  margin-top: -9px !important;
   display: flex !important;
 
   li {
@@ -78,18 +79,18 @@
     left: 0 !important;
     width: 60% !important;
     height: 100vh !important;
-    background: url('../../assets/bgWhite.png') !important;
+    // background: url('../../assets/bgWhite.png') !important;
     background-color: var(--white-color) !important;
     background-size: cover !important;
     background-repeat: repeat !important;
   }
+
   ul {
-    list-style: none !important;
     padding: 0rem 0 !important;
     flex-direction: column !important;
-    flex: 1 !important;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
+    flex: 0 !important;
+    justify-content: flex-end !important;
+    align-items: flex-end !important;
     list-style: none !important;
     margin: 0 2rem !important;
     display: flex !important;
@@ -98,13 +99,15 @@
   li {
     margin: 1rem 1rem !important;
     cursor: pointer !important;
-    flex-direction: column !important;
+    display: flex !important;
+    align-items: flex-start;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    justify-content: flex-start !important;
 
     div {
-      width: 10px !important;
-      height: 10px !important;
-      background: transparent !important;
-      border-radius: 50% !important;
+      width: 24px !important;
+      height: 24px !important;
       margin-bottom: 5px !important;
     }
 
@@ -126,7 +129,67 @@
 
     &:hover {
       div {
-      background: transparent !important;
+        background: transparent !important;
+      }
+    }
+  }
+
+  .app__navmenu_social-media {
+    margin: 0 !important;
+    margin-top: 10px !important;
+    flex-direction: row !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    align-content: flex-start !important;
+    justify-content: flex-start !important;
+
+    li {
+      margin: 0rem 1rem !important;
+      cursor: pointer !important;
+      display: flex !important;
+      align-items: flex-start !important;
+      align-content: flex-start !important;
+      margin-right: -10px !important;
+      padding: 0 !important;
+      padding-top: 10px !important;
+      max-width: 40px;
+      div {
+        width: 24px !important;
+        height: 24px !important;
+        margin-bottom: 5px !important;
+        margin-right: 16px;
+      }
+    }
+  }
+}
+
+.app__navbar_social-media {
+  margin: 0 !important;
+  margin-top: 10px !important;
+  flex-direction: row !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  align-content: flex-end !important;
+  justify-content: flex-end !important;
+
+  li {
+    margin: 0rem 0rem !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: self-end !important;
+    align-content: flex-end !important;
+    flex-wrap: nowrap;
+    justify-content: flex-end !important;
+    padding: 0 !important;
+
+    div {
+      width: 24px !important;
+      height: 24px !important;
+      margin-bottom: 5px !important;
+      margin-right: 16px;
+      svg {
+        width: 30px !important;
+        height: 30px !important;
       }
     }
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { navBarLinks } from '../constants';
+import { SocialMedia } from '../components';
 
 const NavigationDots = ({ active }) => (
   <div className='app__navigation'>
@@ -11,6 +12,7 @@ const NavigationDots = ({ active }) => (
         className={`app__navigation-dot ${active === item ? 'dot-active' : ''}`}
       />
     ))}
+    <SocialMedia />
   </div>
 );
 

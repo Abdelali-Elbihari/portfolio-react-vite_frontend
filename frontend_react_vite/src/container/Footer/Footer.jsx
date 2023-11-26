@@ -59,21 +59,9 @@ const Footer = () => {
         </a>
       </div>
 
-      {!isValid && isSubmitted && (
-        <div className='app__footer-form-alerts'>
-          {Object.values(errors).map((e, idx) => {
-            return (
-              <Alert severity='warning' key={idx}>
-                {e.message}
-              </Alert>
-            );
-          })}
-        </div>
-      )}
-
       {!isFormHidden ? (
         <form onSubmit={handleSubmit(submitForm)} className='app__footer-form app__flex'>
-          <div className='app__flex'>
+          <div className='app__footer-form-input'>
             <input
               className='p-text'
               type='text'
@@ -83,8 +71,13 @@ const Footer = () => {
                 required: { value: true, message: 'Name is required' }
               })}
             />
+            {!isValid && isSubmitted && errors?.name?.type === 'required' && (
+              <Alert severity='error' key={errors.name.type}>
+                {errors.name.message}
+              </Alert>
+            )}
           </div>
-          <div className='app__flex'>
+          <div className='app__footer-form-input'>
             <input
               className='p-text'
               type='email'
@@ -95,16 +88,26 @@ const Footer = () => {
                 pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'A valid email is required' }
               })}
             />
+            {!isValid && isSubmitted && (errors?.email?.type === 'required' || errors?.email?.type === 'pattern') && (
+              <Alert severity='error' key={errors.email.type}>
+                {errors.email.message}
+              </Alert>
+            )}
           </div>
-          <div>
+          <div className='app__footer-form-input'>
             <textarea
-              className='p-text'
+              className='p-text '
               placeholder='Your Message'
               name='message'
               {...register('message', {
                 required: { value: true, message: 'Message is required' }
               })}
             />
+            {!isValid && isSubmitted && errors?.message?.type === 'required' && (
+              <Alert severity='error' key={errors.message.type}>
+                {errors.message.message}
+              </Alert>
+            )}
           </div>
           <button type='submit' className='p-text' disabled={isSubmitting}>
             {isSubmitting ? 'Sending...' : 'Send Message'}
