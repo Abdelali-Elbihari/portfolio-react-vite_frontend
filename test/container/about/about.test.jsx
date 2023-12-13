@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, within } from '@testing-library/react';
-import { client, urlFor } from '../../../src/client';
-import About, { ProfileImage, ProfileDescription, ProfileTitle } from '../../../src/container/About/About';
+import { client, urlFor } from '../../../src/client.js';
+import About, { ProfileImage, ProfileDescription, ProfileTitle } from '../../../src/container/About/About.jsx';
 
 const mockAbouts = [
   {

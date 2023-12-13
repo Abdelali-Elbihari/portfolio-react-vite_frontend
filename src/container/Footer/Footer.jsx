@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Alert from '@mui/material/Alert';
 import emailjs from '@emailjs/browser';
-import { images } from '../../constants';
-import { AppWrap, MotionWrap } from '../../wrapper';
-import { client } from '../../client';
+import { images } from '../../constants/index.js';
+import { AppWrap, MotionWrap } from '../../wrapper/index.jsx';
+import { client } from '../../client.js';
 import './Footer.scss';
 
 const Footer = () => {

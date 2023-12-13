@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { AppWrap, MotionWrap } from '../../wrapper';
-import { defaultAbouts } from '../../constants';
-import { client, urlFor } from '../../client';
+import { AppWrap, MotionWrap } from '../../wrapper/index.jsx';
+import { defaultAbouts } from '../../constants/index.js';
+import { client, urlFor } from '../../client.js';
 import './About.scss';
 
 const About = () => {

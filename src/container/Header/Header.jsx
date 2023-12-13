@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { images } from '../../constants';
-import { AppWrap, MotionWrap } from '../../wrapper';
+import { images } from '../../constants/index.js';
+import { AppWrap, MotionWrap } from '../../wrapper/index.jsx';
 import './Header.scss';
 
 const scaleVariants = {

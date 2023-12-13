@@ -3,8 +3,8 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { motion } from 'framer-motion';
 
-import { AppWrap, MotionWrap } from '../../wrapper';
-import { urlFor, client } from '../../client';
+import { AppWrap, MotionWrap } from '../../wrapper/index.jsx';
+import { urlFor, client } from '../../client.js';
 import './Projects.scss';
 
 const Projects = () => {

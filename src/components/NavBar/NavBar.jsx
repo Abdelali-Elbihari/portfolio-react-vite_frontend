@@ -9,7 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Container } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
-import { images, navBarLinks } from '../../constants';
+import { images, navBarLinks } from '../../constants/index.js';
 import { Drawer } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';

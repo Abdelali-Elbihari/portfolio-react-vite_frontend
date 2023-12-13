@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavigationDots } from '../components';
+import { NavigationDots } from '../components/index.jsx';
 
 const AppWrap = (Component, idName, classNames) =>
   function HOC() {
